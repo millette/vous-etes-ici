@@ -2,12 +2,19 @@
   "name": "vous-etes-ici",
   "private": true,
   "dependencies": {
-    "bootstrap-sass": "~3.3.5",
+    "bootstrap-sass": "~3.3.7",
     "modernizr": "~2.8.1",
     "page": "^1.7.1",
-    "bootswatch": "^3.3.7"
+    "bootswatch": "^3.3.7",
+    "jquery": "2.2.4",
+    "animatescroll": "^1.0.7"
   },
   "overrides": {
+    "animatescroll": {
+      "main": [
+        "animatescroll.js"
+      ]
+    },
     "bootstrap-sass": {
       "main": [
         "assets/stylesheets/_bootstrap.scss",
