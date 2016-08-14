@@ -100,7 +100,7 @@ $font-size-base:          17px !default;
   }
 }
 
-.footer {
+.panel-footer, .footer {
   text-align: center;
 }
 
@@ -110,4 +110,22 @@ body {
 
 label {
   font-size: 90%;
+}
+
+@media screen and (min-width: 768px) {
+  .note.note-right {
+    float: right;
+    width: 45%;
+    margin-left: 3em;
+    text-align: right;
+    padding-top: 0;
+    p {
+      font-size: 90%;
+      color: white;
+    }
+  }
+}
+
+.panel-footer {
+  border: none;
 }
