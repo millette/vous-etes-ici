@@ -3,6 +3,7 @@ import gulp from 'gulp';
 import gulpLoadPlugins from 'gulp-load-plugins';
 import browserSync from 'browser-sync';
 import del from 'del';
+
 import {stream as wiredep} from 'wiredep';
 
 const $ = gulpLoadPlugins();
@@ -101,6 +102,9 @@ gulp.task('serve', ['styles', 'scripts', 'fonts'], () => {
     port: 9000,
     server: {
       baseDir: ['.tmp', 'app'],
+      serveStaticOptions: {
+        extensions: ['html']
+      },
       routes: {
         '/bower_components': 'bower_components'
       }
