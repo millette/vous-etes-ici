@@ -1,6 +1,8 @@
 $icon-font-path: '../fonts/';
 
-$font-size-base:          18px !default;
+$line-height-base:        1.618034 !default;
+$font-size-base:          17px !default;
+
 // cerulean
 @import "bower_components/bootswatch/superhero/_variables.scss";
 
@@ -104,4 +106,8 @@ $font-size-base:          18px !default;
 
 .radio label {
   font-size: 100%;
+}
+
+body {
+  letter-spacing: 1px;
 }
