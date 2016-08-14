@@ -7,7 +7,8 @@
     "page": "^1.7.1",
     "bootswatch": "^3.3.7",
     "jquery": "2.2.4",
-    "animatescroll": "^1.0.7"
+    "animatescroll": "^1.0.7",
+    "animate.css": "^3.5.2"
   },
   "overrides": {
     "animatescroll": {
