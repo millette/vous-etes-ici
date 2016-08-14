@@ -5,12 +5,12 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Vous êtes ici</title>
-
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <!-- Place favicon.ico in the root directory -->
 
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="/bower_components/animate.css/animate.css" />
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -27,24 +27,24 @@
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div class="container">
+    <div id="app" class="container">
       <div class="header">
         <ul class="nav nav-pills pull-right">
-          <li class="active"><a href="/">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
+          <li class="active"><a href="/">Accueil</a></li>
+          <li><a href="/a-propos">À Propos</a></li>
+          <li><a href="/contact">Contact</a></li>
         </ul>
-        <h3 class="text-muted text-center">Vous êtes ici</h3>
+        <h3 class="text-center">Vous êtes ici</h3>
       </div>
 
       <div class="jumbotron">
         <h1 class="title">Bienvenue sur le web!</h1>
         <p class="lead">Je vous souhaite un agréable séjour.</p>
-        <p><a class="btn btn-lg btn-success" href="#debut">La suite par ici <span class="glyphicon glyphicon-hand-down" aria-hidden="true"></span></a></p>
+        <p><a class="btn btn-lg btn-success" target666='_self' href="#debut">La suite par ici <span class="glyphicon glyphicon-hand-down" aria-hidden="true"></span></a></p>
       </div>
 
-      <div class="row marketing" id="debut">
-        <h2>Web, toile, internet</h2>
+      <div class="row marketing">
+        <h2 id="debut">Web, toile, internet</h2>
         <p>
           Dans l'usage courant, ces mots veulent tous dire la même chose.
           «<i>Web</i>» (raccourci de <i>World Wide Web</i>) est la traduction
@@ -54,8 +54,8 @@
 
         <h3>C'est votre première visite ici?</h3>
         <p>
-          <a href="#" class="btn btn-primary">Première visite</a>
-          <a href="#" class="btn btn-info">Déjà vu</a>
+          <a href="/premiere-visite" class="btn btn-primary">Première visite</a>
+          <a href="/deja-vu" class="btn btn-info">Déjà vu</a>
         </p>
       </div>
 
