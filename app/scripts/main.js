@@ -23,6 +23,7 @@ $(() => {
   const index = () => showPage('/', 'index')
   const about = () => showPage('/a-propos', 'à propos')
   const contact = () => showPage('/contact', 'contact')
+  const firstVisit = () => showPage('/premiere-visite', 'première visite')
   const notfound = () => showPage('/404', 'not found', 'zoomInLeft')
 
   const pageExit = (ctx, next) => {
@@ -35,6 +36,7 @@ $(() => {
     anchorer()
     page('/', index)
     page('/a-propos', about)
+    page('/premiere-visite', firstVisit)
     page('/contact', contact)
     page('*', notfound)
     page.exit(pageExit)
