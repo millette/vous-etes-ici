@@ -11,12 +11,28 @@ $(() => {
     })
   }
 
+  const pathname = (u) => {
+    const el = document.createElement('a')
+    el.href = u
+    return el.pathname
+  }
+
+  const formStuff = () => {
+    $('form').submit(function (ev) {
+      const action = this.action || this.baseURI
+      const toPage = pathname(action)
+      ev.preventDefault()
+      page(toPage)
+    })
+  }
+
   const showPage = (path, name, effect) => {
     if (!effect) { effect = 'rollIn' } // zoomInDown lightSpeedIn
     console.log('PAGE', name)
     $app.load(path + ' #app', () => {
       $('#app').addClass('animated ' + effect)
       anchorer()
+      formStuff()
     })
   }
 
@@ -34,6 +50,7 @@ $(() => {
 
   const setupPages = () => {
     anchorer()
+    formStuff()
     page('/', index)
     page('/a-propos', about)
     page('/premiere-visite', firstVisit)
