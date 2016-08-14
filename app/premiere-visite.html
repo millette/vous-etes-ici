@@ -39,13 +39,24 @@
       </div>
 
       <div class="row marketing">
+        <div class="note note-right alert alert-warning fade in alert-dismissible" role="alert">
+            <button title="Fermer cette alerte" type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h2>Attention</h2>
+            <p>
+                Personne ne vous oblige à partager votre vrai nom. Ce n'est pas
+                parce qu'un site vous demande des informations (qui pourraient
+                être confidentielles) que vous devez répondre.
+            </p>
+        </div>
         <h1 class="title">Première visite</h1>
-        <p>
+        <p class="clearfix">
             Si vous êtes ici, c'est probablement parce qu'un membre de votre
             famille ou l'un de vos amis vous a référé à nous pour mieux
             découvrir l'univers numérique qui nous englobe.
         </p>
-        <form class="form-horizontal">
+        <form class="form-horizontal" method="post" action="/accueil-visiteur">
           <div class="form-group">
             <label for="firstnameinput" class="col-md-4 control-label">Votre prénom:</label>
             <div class="col-md-8">
@@ -60,7 +71,8 @@
           </div>
           <div class="form-group">
             <div class="col-md-offset-4 col-md-8">
-                <input value="Envoyer" class="btn btn-default" type="submit">
+                <input value="Envoyer" class="btn btn-primary" type="submit">
+                <a href="/accueil-visiteur" class="btn btn-info">Poursuivre sans répondre</a>
             </div>
           </div>
         </form>
