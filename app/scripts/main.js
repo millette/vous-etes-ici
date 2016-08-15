@@ -2,7 +2,16 @@
 $(() => {
   'use strict'
 
+  const appState = { }
   const $app = $('#app').parent()
+
+  const serializeToObject = ($form) => {
+    const ret = {}
+    $form.serializeArray().forEach((field) => {
+      if (field.value) { ret[field.name] = field.value }
+    })
+    return ret
+  }
 
   const anchorer = () => {
     $('a[href*="#"]:not([href="#"])').click(function (ev) {
@@ -21,6 +30,9 @@ $(() => {
     $('form').submit(function (ev) {
       const action = this.action || this.baseURI
       const toPage = pathname(action)
+      const here = pathname(this.baseURI).slice(1)
+      appState[here] = serializeToObject($(this))
+      // appState[here] = $(this).serializeArray()
       ev.preventDefault()
       page(toPage)
     })
@@ -33,6 +45,7 @@ $(() => {
       $('#app').addClass('animated ' + effect)
       anchorer()
       formStuff()
+      $('#appstate').text(JSON.stringify(appState, null, ' '))
     })
   }
 
