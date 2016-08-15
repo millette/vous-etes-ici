@@ -49,10 +49,14 @@ $(() => {
     })
   }
 
-  const index = () => showPage('/', 'index')
-  const about = () => showPage('/a-propos', 'à propos')
-  const contact = () => showPage('/contact', 'contact')
-  const firstVisit = () => showPage('/premiere-visite', 'première visite')
+  const pages = [
+    ['/', 'index'],
+    ['/a-propos', 'à propos'],
+    ['/contact', 'contact'],
+    ['/premiere-visite', 'première visite'],
+    ['/accueil-visiteur', 'accueil visiteur']
+  ]
+
   const notfound = () => showPage('/404', 'not found', 'zoomInLeft')
 
   const pageExit = (ctx, next) => {
@@ -64,10 +68,7 @@ $(() => {
   const setupPages = () => {
     anchorer()
     formStuff()
-    page('/', index)
-    page('/a-propos', about)
-    page('/premiere-visite', firstVisit)
-    page('/contact', contact)
+    pages.forEach((p) => page(p[0], showPage.bind(null, p[0], p[1])))
     page('*', notfound)
     page.exit(pageExit)
     page({
