@@ -1,5 +1,14 @@
 {
-  "private": true,
+  "name": "vous-etes-ici",
+  "version": "0.0.0",
+  "description": "Web intro.",
+  "license": "AGPL-3.0",
+  "repository": "millette/vous-etes-ici",
+  "author": {
+    "name": "Robin Millette",
+    "email": "robin@millette.info",
+    "url": "http://robin.millette.info"
+  },
   "engines": {
     "node": ">=0.12.0"
   },
