@@ -2,8 +2,6 @@
 $(() => {
   'use strict'
 
-  // 666, yeah
-
   const appState = { }
   const $app = $('#app').parent()
 
