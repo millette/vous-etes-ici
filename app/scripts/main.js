@@ -87,6 +87,9 @@ $(() => {
     ['/a-propos', 'à propos'],
     ['/contact', 'contact'],
     ['/premiere-visite', 'première visite'],
-    ['/accueil-visiteur', 'accueil visiteur']
+    ['/accueil-visiteur', 'accueil visiteur'],
+    ['/materiel', 'matériel'],
+    ['/logiciels', 'logiciels'],
+    ['/web', 'web']
   ])
 })
