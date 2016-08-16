@@ -32,43 +32,28 @@ $(() => {
       const toPage = pathname(action)
       const here = pathname(this.baseURI).slice(1)
       appState[here] = serializeToObject($(this))
-      // appState[here] = $(this).serializeArray()
       ev.preventDefault()
       page(toPage)
     })
   }
 
-  const showPage = (path, name, effect) => {
-    if (!effect) { effect = 'rollIn' } // zoomInDown lightSpeedIn
-    console.log('PAGE', name)
-    $app.load(path + ' #app', () => {
-      $('#app').addClass('animated ' + effect)
-      anchorer()
-      formStuff()
-      $('#appstate').text(JSON.stringify(appState, null, ' '))
-    })
-  }
-
-  const pages = [
-    ['/', 'index'],
-    ['/a-propos', 'à propos'],
-    ['/contact', 'contact'],
-    ['/premiere-visite', 'première visite'],
-    ['/accueil-visiteur', 'accueil visiteur']
-  ]
-
-  const notfound = () => showPage('/404', 'not found', 'zoomInLeft')
-
-  const pageExit = (ctx, next) => {
-    console.log('PAGE exit')
-    $('#app').addClass('animated rollOut') // zoomOutRight lightSpeedOut
-    setTimeout(next, 500)
-  }
-
-  const setupPages = () => {
+  const setupPages = (pages) => {
+    const showPage = (path, name, effect) => {
+      $app.load(path + ' #app', () => {
+        $('#appstate').text(JSON.stringify(appState, null, ' '))
+        $('#app').addClass('animated ' + effect)
+        anchorer()
+        formStuff()
+      })
+    }
+    const notfound = showPage.bind(null, '/404', 'not found', 'zoomInLeft')
+    const pageExit = (ctx, next) => {
+      $('#app').addClass('animated rollOut') // zoomOutRight lightSpeedOut
+      setTimeout(next, 200) // next()
+    }
     anchorer()
     formStuff()
-    pages.forEach((p) => page(p[0], showPage.bind(null, p[0], p[1])))
+    pages.forEach((p) => page(p[0], showPage.bind(null, p[0], p[1], 'rollIn')))
     page('*', notfound)
     page.exit(pageExit)
     page({
@@ -77,5 +62,11 @@ $(() => {
     })
   }
 
-  setupPages()
+  setupPages([
+    ['/', 'index'],
+    ['/a-propos', 'à propos'],
+    ['/contact', 'contact'],
+    ['/premiere-visite', 'première visite'],
+    ['/accueil-visiteur', 'accueil visiteur']
+  ])
 })

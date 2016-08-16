@@ -15,7 +15,7 @@
   "scripts": {
     "test": "gulp lint",
     "build": "gulp",
-    "dev": "gulp serve"
+    "start": "gulp serve"
   },
   "devDependencies": {
     "babel-core": "^6.4.0",
