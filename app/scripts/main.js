@@ -28,12 +28,9 @@ $(() => {
 
   const formStuff = () => {
     $('form').submit(function (ev) {
-      const action = this.action || this.baseURI
-      const toPage = pathname(action)
-      const here = pathname(this.baseURI).slice(1)
-      appState[here] = serializeToObject($(this))
       ev.preventDefault()
-      page(toPage)
+      appState[pathname(this.baseURI).slice(1)] = serializeToObject($(this))
+      page(pathname(this.action || this.baseURI))
     })
   }
 
