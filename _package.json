@@ -1,0 +1,17 @@
+{
+  "name": "vous-etes-ici",
+  "scripts": {
+    "start": "list -a"
+  },
+  "description": "Web intro.",
+  "license": "AGPL-3.0",
+  "repository": "millette/vous-etes-ici",
+  "author": {
+    "name": "Robin Millette",
+    "email": "robin@millette.info",
+    "url": "http://robin.millette.info"
+  },
+  "dependencies": {
+    "micro-list": "git://github.com/millette/micro-list.git#nodevlt6"
+  }
+}
