@@ -90,6 +90,8 @@ $(() => {
     ['/accueil-visiteur', 'accueil visiteur'],
     ['/materiel', 'matériel'],
     ['/logiciels', 'logiciels'],
+    ['/credits', 'crédits'],
+    ['/glossaire', 'glossaire'],
     ['/web', 'web']
   ])
 })
