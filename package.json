@@ -14,8 +14,9 @@
   },
   "scripts": {
     "test": "gulp lint",
-    "build": "gulp",
-    "start": "gulp serve"
+    "build": "gulp && cp _package.json dist/package.json",
+    "start": "gulp serve",
+    "now": "npm run build && now dist"
   },
   "devDependencies": {
     "babel-core": "^6.4.0",
