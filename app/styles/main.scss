@@ -77,10 +77,6 @@ $font-size-base:          17px !default;
     padding-bottom: 20px;
   }
 
-  .container {
-    max-width: 730px;
-  }
-
   /* Remove the padding we set earlier */
   .header,
   .marketing,
@@ -101,6 +97,7 @@ $font-size-base:          17px !default;
 }
 
 .panel-footer, .footer {
+  margin-top: 2em;
   font-size: 80%;
   text-align: center;
 }
